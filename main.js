@@ -16,7 +16,7 @@ const boardState = {
   // --- 3 2
   // --- 1
   // ---
-  board: [],
+  board: [], // hello
   initializeGame: function () {
     this.board = [[3, 2, 1], [], []];
   },
