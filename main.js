@@ -52,13 +52,9 @@ const BoardState = function () {
 
   const getTopDisc = function (peg) {
     return board[peg][board[peg].length - 1];
-  },
+  };
+  
   checkWinner = function () {
-    // Check to see if the state of the board is the original order (largest to smallest) on the last peg instead of the first:
-    // Winner! Play again? (board will be reset to original state)
-    // ---
-    // ---
-    // --- 3 2 1
     if (board[2].length == 3) {
       return true;
     }
@@ -68,7 +64,9 @@ const BoardState = function () {
   return { initializeGame, getBoard, logMove };
 };
 
+// Create instance of BoardState
 const boardState = BoardState();
+
 // Start game
 boardState.initializeGame();
 console.log(
@@ -81,22 +79,23 @@ const moveDisc = function (fromPeg, toPeg) {
   toPeg--;
 
   boardState.logMove(fromPeg, toPeg);
-
-  console.log(boardState.board); //testing
 };
 
-moveDisc(1, 2);
-moveDisc(1, 3);
-moveDisc(2, 1);
-moveDisc(3, 2);
-moveDisc(1, 2);
-moveDisc(1, 3);
-moveDisc(2, 1);
-moveDisc(2, 3);
-moveDisc(1, 3);
+// moveDisc(1, 2);
+// moveDisc(1, 3);
+// moveDisc(2, 1);
+// moveDisc(3, 2);
+// moveDisc(1, 2);
+// moveDisc(1, 3);
+// moveDisc(2, 1);
+// moveDisc(2, 3);
+// moveDisc(1, 3);
 
 // Extension Options
 // Add set board function with ability to set number of pegs and discs (minimum of 3 of each):
 // const setUp = function () { };
 
 // Create algorithm to play the game
+
+// Add error handling for pegs that are out of range...
+// Add error handling for moving a peg from an array with nothing to another peg
